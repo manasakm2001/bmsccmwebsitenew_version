@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMS College of Commerce & Management | Excellence in Business Education</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a4d2e;
+            --primary-light: #2d6a4f;
+            --primary-dark: #0d2818;
+            --accent: #d4af37;
+            --accent-light: #f0d97c;
+            --text-dark: #1a1a2e;
+            --text-light: #6b6b7b;
+            --bg-light: #fafaf8;
+            --bg-white: #ffffff;
+            --border-color: #e8e8e4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background: var(--bg-light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Image optimization */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .img-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-contain {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Navigation */
+        .top-bar {
+            background: var(--primary-dark);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.3s;
+        }
+
+        .top-bar a:hover {
+            color: var(--accent-light);
+        }
+
+        header {
+            background: var(--bg-white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(26, 77, 46, 0.2);
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            margin-bottom: -2px;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .apply-btn {
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .apply-btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .apply-btn::after {
+            display: none;
+        }
+
+        /* Hero Section with Image */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('campus-front.png') center/cover no-repeat;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 77, 46, 0.85), rgba(45, 106, 79, 0.75));
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--accent-light);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary-dark);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Event Banner - Samskruti */
+        .event-banner {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('samskruti.png') center/cover;
+            opacity: 0.15;
+        }
+
+        .event-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .event-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .event-details {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .event-date {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FFD700;
+            margin: 1rem 0;
+        }
+
+        /* Leadership Section with Images */
+        .leadership {
+            padding: 6rem 2rem;
+            background: var(--bg-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .leadership-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .leader-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .leader-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            border: 5px solid var(--accent);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .leader-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader-name {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .leader-title {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .leader-bio {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .gallery-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            height: 300px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 6rem 2rem;
+            background: var(--bg-white);
+        }
+
+        .programs-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .program-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .program-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .program-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .program-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-features li {
+            padding: 0.5rem 0;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .program-features li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .program-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .program-link:hover {
+            gap: 1rem;
+            color: var(--accent);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-white);
+            border-radius: 8px;
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 0.3rem;
+        }
+
+        .contact-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .contact-form {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-about p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .event-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <a href="tel:+918012345678"><i class="fas fa-phone"></i> +91-80-1234-5678</a>
+                <a href="mailto:info@bmsccm.edu"><i class="fas fa-envelope"></i> info@bmsccm.edu</a>
+            </div>
+            <div class="top-bar-right">
+                <a href="#"><i class="fas fa-user"></i> Student Portal</a>
+                <a href="#"><i class="fas fa-graduation-cap"></i> Alumni</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <img src="bmsccm_logo.jpg" alt="BMS College Logo" loading="lazy">
+                </div>
+                <div class="logo-text">
+                    <h1>BMSCCM</h1>
+                    <p>Excellence in Education</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="apply-btn">Apply Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🏆 NAAC A+ Accredited | NIRF Ranked</div>
+            <h1>Shape Your Future<br>in Business</h1>
+            <p class="hero-subtitle">Premier institution for Commerce & Management education in Bangalore</p>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <a href="#programs" class="btn btn-primary">Explore Programs</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">38+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Students</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Placement Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Samskruti Event Banner -->
+    <section class="event-banner">
+        <div class="event-content">
+            <h2>🎭 SAMSKRUTHI 2026 🎭</h2>
+            <p class="event-details">Intercollegiate Management and Cultural Fest</p>
+            <p class="event-date">27-28 February 2026</p>
+            <p style="font-size: 1.5rem; margin: 1rem 0;">
+                <strong>Chief Guest:</strong> Shree Sudeepa Sanjeev
+            </p>
+            <p style="margin-bottom: 1.5rem;">Indian Actor, Director, Producer, Screenwriter and Singer</p>
+            <a href="#" class="btn btn-primary">Register Now</a>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership" id="leadership">
+        <div class="section-header">
+            <div class="section-subtitle">Our Legacy & Leadership</div>
+            <h2 class="section-title">Founders & Leaders</h2>
+            <p class="section-description">Built on a strong foundation, guided by visionary leaders</p>
+        </div>
+
+        <!-- Founders Subsection -->
+        <div style="max-width: 1200px; margin: 0 auto 4rem; text-align: center;">
+            <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 3rem;">Our Founders</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; max-width: 800px; margin: 0 auto;">
+                <div class="leader-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #2d3e50 100%); color: white;">
+                    <div class="leader-image">
+                        <img src="bms_sree.jpg" alt="Late Sri B. M. Sreenivasaiah" loading="lazy">
+                    </div>
+                    <h3 class="leader-name" style="color: var(--accent-light);">Late Sri B. M. Sreenivasaiah</h3>
+                    <p class="leader-title" style="color: var(--accent);">Founder</p>
+                    <p class="leader-bio" style="color: rgba(255,255,255,0.85);">Visionary founder who established the institution with a commitment to excellence in education and student development.</p>
+                </div>
+
+                <div class="leader-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #2d3e50 100%); color: white;">
+                    <div class="leader-image">
+                        <img src="bbbb.jpg" alt="Late Sri B. S. Narayan" loading="lazy">
+                    </div>
+                    <h3 class="leader-name" style="color: var(--accent-light);">Late Sri B. S. Narayan</h3>
+                    <p class="leader-title" style="color: var(--accent);">Donor Trustee</p>
+                    <p class="leader-bio" style="color: rgba(255,255,255,0.85);">Distinguished trustee whose generous contributions and guidance shaped the institution's growth and values.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Leadership -->
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 3rem;">Current Leadership</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; max-width: 800px; margin: 0 auto;">
+                <div class="leader-card" style="background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);">
+                    <div class="leader-image">
+                        <img src="chair.jpg" alt="Sri Aviram Sharma" loading="lazy">
+                    </div>
+                    <h3 class="leader-name" style="color: var(--primary-dark);">Sri Aviram Sharma</h3>
+                    <p class="leader-title" style="color: var(--primary);">Chairman</p>
+                    <p class="leader-bio" style="color: var(--text-dark);">Guiding the institution's strategic direction and fostering innovation in business education.</p>
+                </div>
+
+                <div class="leader-card" style="background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);">
+                    <div class="leader-image">
+                        <img src="princi.jpg" alt="Dr. Pankaj Choudhary" loading="lazy">
+                    </div>
+                    <h3 class="leader-name" style="color: var(--primary-dark);">Dr. Pankaj Choudhary</h3>
+                    <p class="leader-title" style="color: var(--primary);">Principal</p>
+                    <p class="leader-bio" style="color: var(--text-dark);">Leading the institution with vision and dedication towards academic excellence and holistic student development.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Special Guest -->
+        <div style="max-width: 1200px; margin: 4rem auto 0; text-align: center;">
+            <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 3rem;">Samskruthi 2026 - Chief Guest</h3>
+            <div style="max-width: 400px; margin: 0 auto;">
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="sud.webp" alt="Shree Sudeepa Sanjeev" loading="lazy">
+                    </div>
+                    <h3 class="leader-name">Shree Sudeepa Sanjeev</h3>
+                    <p class="leader-title">Chief Guest - Samskruthi 2026</p>
+                    <p class="leader-bio">Renowned actor, director, and cultural icon inspiring our students to reach for excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="section-header">
+            <div class="section-subtitle">Courses offered</div>
+            <h2 class="section-title">Our Courses</h2>
+            <p class="section-description">Comprehensive Courses designed to prepare you for success in the business world</p>
+        </div>
+
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-icon">🎓</div>
+                <h3 class="program-title">Bachelor of Commerce (B.Com)</h3>
+                <p class="program-description">Build a strong foundation in commerce, accounting, and business fundamentals.</p>
+                <ul class="program-features">
+                    <li>3-year undergraduate program</li>
+                    <li>Multiple specializations</li>
+                    <li>Industry internships</li>
+                    <li>Professional certifications</li>
+                </ul>
+                <a href="#" class="program-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="program-card">
+                <div class="program-icon">💼</div>
+                <h3 class="program-title">Bachelor of Business Administration (BBA)</h3>
+                <p class="program-description">Develop management skills and business acumen for leadership roles.</p>
+                <ul class="program-features">
+                    <li>3-year undergraduate program</li>
+                    <li>Entrepreneurship focus</li>
+                    <li>Live projects</li>
+                    <li>Global exposure</li>
+                </ul>
+                <a href="#" class="program-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="program-card">
+                <div class="program-icon">💻</div>
+                <h3 class="program-title">Bachelor of Computer Applications (BCA)</h3>
+                <p class="program-description">Build expertise in programming, web development, and software applications.</p>
+                <ul class="program-features">
+                    <li>3-year undergraduate program</li>
+                    <li>Practical coding experience</li>
+                    <li>Industry-relevant curriculum</li>
+                    <li>Software development focus</li>
+                </ul>
+                <a href="#" class="program-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="section-header">
+            <div class="section-subtitle">Campus Life</div>
+            <h2 class="section-title">Photo Gallery</h2>
+            <p class="section-description">Experience the vibrant life and culture at BMSCCM</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="bms.jpg" alt="Campus Building" loading="lazy">
+                <div class="gallery-overlay">
+                    <h4>Our Campus</h4>
+                    <p>State-of-the-art infrastructure</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="bmsccm.jpg" alt="College Event" loading="lazy">
+                <div class="gallery-overlay">
+                    <h4>Events & Activities</h4>
+                    <p>Vibrant campus life</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="bmss.jpg" alt="Student Activities" loading="lazy">
+                <div class="gallery-overlay">
+                    <h4>Student Engagement</h4>
+                    <p>Learning beyond classrooms</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="bmssccm.jpg" alt="Academic Excellence" loading="lazy">
+                <div class="gallery-overlay">
+                    <h4>Academic Excellence</h4>
+                    <p>Quality education delivered</p>
+                </div>
+            </div>
+
+            <!-- <div class="gallery-item">
+                <img src="bbbb.jpg" alt="Campus Facilities" loading="lazy">
+                <div class="gallery-overlay">
+                    <h4>Modern Facilities</h4>
+                    <p>Excellence in infrastructure</p>
+                </div>
+            </div> -->
+
+            <div class="gallery-item">
+                <img src="samskruti.png" alt="Samskruthi Event" loading="lazy">
+                <div class="gallery-overlay">
+                    <h4>Samskruthi 2026</h4>
+                    <p>Cultural extravaganza</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <div class="section-subtitle">Get in Touch</div>
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-description">We're here to help. Reach out to us for any questions or information.</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Visit Our Campus</h3>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>BMS College of Commerce & Management<br>
+                        No-97, Kavi Lakshmisha Road<br>
+                        V V Puram, Basavanagudi<br>
+                        Bengaluru - 560004, Karnataka, India</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>Main Office: +91-80-12345678<br>
+                        Admissions: +91-80-12345679<br>
+                        Toll Free: 1800-123-4567</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>General: info@bmsccm.edu<br>
+                        Admissions: admissions@bmsccm.edu<br>
+                        Careers: careers@bmsccm.edu</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Office Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 5:00 PM<br>
+                        Saturday: 9:00 AM - 1:00 PM<br>
+                        Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Program Interest</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Select program</option>
+                            <option value="bcom">B.Com</option>
+                            <option value="bba">BBA</option>
+                            <option value="bca">BCA</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>BMS College of Commerce & Management</h3>
+                <p>Empowering students with quality education in commerce and management since 1985. Committed to excellence, innovation, and holistic development.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Student Portal</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li><a href="#">E-Learning</a></li>
+                    <li><a href="#">Career Services</a></li>
+                    <li><a href="#">Alumni Network</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="#">Campus Tour</a></li>
+                    <li><a href="#">Events Calendar</a></li>
+                    <li><a href="#">News & Media</a></li>
+                    <li><a href="#">Admissions</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 BMS College of Commerce & Management. All rights reserved. | 
+            <a href="#" style="color: var(--accent); text-decoration: none;">Privacy Policy</a> | 
+            <a href="#" style="color: var(--accent); text-decoration: none;">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
